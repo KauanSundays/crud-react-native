@@ -1,13 +1,18 @@
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+
+import Task from './src/pages/newTask';
 
 export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Task">
-        
+        <Stack.Screen
+          name="Task"
+          component={Task}
+          
+          />
       </Stack.Navigator>
     </NavigationContainer>
   );
