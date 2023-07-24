@@ -1,9 +1,11 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import Task from './src/pages/newTask';
+import Task from './src/pages/Task';
+import NewTask from './src/pages/newTask';
+
 
 const Stack = createStackNavigator()
 export default function App() {
@@ -11,20 +13,22 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Task">
         <Stack.Screen
-          name="Task"
+          name="Taske"
           component={Task}
+          options={{
+            headerTintColor: "#F49"
+          }}
+        />
 
-          />
+        <Stack.Screen
+          name="New Task"
+          component={NewTask}
+          options={{
+            headerTintColor: "#F49"
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
