@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from "react";
 import {
-    SafeareaView,
     View,
     Text,
     TouchableOpacity, 
@@ -8,11 +7,15 @@ import {
 } from "react-native"
 
 import database from "../../config/firebaseconfig"
-import { FontAwesome } from "@expo/vector-icons"
-//import styles from "../../config/firebaseconfig"
+//import { FontAwesome } from "@expo/vector-icons"
+import styles from "../Task/style"
 
 export default function Task({ navigation }) {
     const [task, setTask] = useState([])
+
+        function deleteTask(id){
+            database.collection("Tasks").doc(id).delete()
+        }
 
     useEffect(() =>{
         database.collection("Tasks").onSnapshot((query)=>{
@@ -23,6 +26,7 @@ export default function Task({ navigation }) {
             setTask(list)
         })
     }, [])
+
     return (
         <View style={styles.container}>
             <FlatList/>
