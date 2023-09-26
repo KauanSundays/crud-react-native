@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { Stack, useRouter } from 'expo-router' 
 
 import { COLORS, icons, images, SIZES } from '../constants'
+import { NearbyJobs, PopularJobs, ScreenHeaderBtn, Welcome} from '../components'
 
 const Home = () => {
   return (
