@@ -7,6 +7,8 @@ import { COLORS, icons, images, SIZES } from '../constants'
 import { NearbyJobs, PopularJobs, ScreenHeaderBtn, Welcome} from '../components'
 
 const Home = () => {
+  const router = useRouter();
+  
   return (
     <View>
       <Text>Home</Text>
