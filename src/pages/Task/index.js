@@ -24,6 +24,7 @@ export default function Task({ navigation }) {
                 list.push({...doc.data(), id: doc.id })
             })
             setTask(list)
+            //teste
         })
     }, [])
 
