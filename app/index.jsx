@@ -1,10 +1,15 @@
-import { View, StyleSheet, Text } from 'react-native'
+import { View, StyleSheet, Text, Pressable } from 'react-native'
 import React from 'react'
+import {useRouter} from 'expo-router'
 
 const app = () => {
+
+    const router = useRouter()
   return (
     <View style={styles.container}>
-      <Text>teste</Text>
+        <Pressable onPress={() => router.push("/lista")}>
+            <Text style={styles.button}>teste</Text>
+        </Pressable>
     </View>
   )
 }
@@ -12,6 +17,10 @@ const app = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1
+    },
+
+    button: {
+        backgroundColor:'#000',
     }
 })
 
