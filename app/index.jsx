@@ -1,17 +1,32 @@
-import { View, StyleSheet, Text, Pressable } from 'react-native'
-import React from 'react'
+import { View, StyleSheet, Text, Pressable, TextInput } from 'react-native'
+import React, { useState } from 'react'
 import {useRouter} from 'expo-router'
 
 const app = () => {
 
-    const router = useRouter()
+  const [nome, setNome] = useState("")
+  const [sobrenome, setSobrenome] = useState("")
+  const [cpf, setCpf] = useState("")
+
+  const router = useRouter()
+
   return (
     <View style={styles.container}>
-        <Pressable onPress={() => router.push("/lista")}>
-            <Text style={styles.button}>teste</Text>
-        </Pressable>
+        <View>
+          <TextInput 
+            style={styles.input}
+            placeholder='nome'
+            onChangeText={text => setNome(text)}
+            value={nome}>         
+          </TextInput>
+        </View>
+
+        <View>
+
+        </View>
     </View>
   )
+
 }
 
 const styles = StyleSheet.create({
