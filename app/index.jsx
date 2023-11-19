@@ -12,18 +12,19 @@ const app = () => {
 
   return (
     <View style={styles.container}>
-        <View>
+        {/* <View>
           <TextInput 
             style={styles.input}
             placeholder='nome'
             onChangeText={text => setNome(text)}
             value={nome}>         
           </TextInput>
-        </View>
-
-        <View>
-
-        </View>
+        </View> */}
+      <View style={styles.container}>
+        <Pressable onPress={router.push("/toma")}>
+          <Text style={styles.botao}>Foi</Text>
+        </Pressable>
+      </View>          
     </View>
   )
 
