@@ -35,10 +35,10 @@ const app = () => {
         />
       </View>
       <View style={styles.buttons}>
-        <Pressable style={styles.button} onPress={handle}>
+        {/* <Pressable style={styles.button} onPress={handle}>
           <Text style={styles.buttonText}>Criar</Text>
-        </Pressable>
-        <Pressable style={styles.button} onPress={() => router.push("/pagina")}>
+        </Pressable> */}
+        <Pressable style={styles.button} onPress={() => router.push("/lista")}>
           <Text style={styles.buttonText}>Ver lista</Text>
         </Pressable>
       </View>
