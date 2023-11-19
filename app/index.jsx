@@ -11,6 +11,18 @@ const app = () => {
 
   const router = useRouter()
 
+  const handle = async (e) => {
+    e.preventDefault();
+
+    const novoUsuarioRef = await firebase.firestore().collection("Pessoas").add({
+      nome: nome,
+      sobrenome: sobrenome,
+      cpf: cpf
+    })
+
+    alert("Usuário criado com sucesso! ID: " + novoUsuarioRef.id)
+  }
+
   return (
     <View style={styles.container}>
       <View style={styles.form}>
@@ -35,12 +47,15 @@ const app = () => {
         />
       </View>
       <View style={styles.buttons}>
-        {/* <Pressable style={styles.button} onPress={handle}>
+
+        <Pressable style={styles.button} onPress={handle}>
           <Text style={styles.buttonText}>Criar</Text>
-        </Pressable> */}
+        </Pressable>
+
         <Pressable style={styles.button} onPress={() => router.push("/lista")}>
           <Text style={styles.buttonText}>Ver lista</Text>
         </Pressable>
+        
       </View>
     </View>
   )
