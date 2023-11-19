@@ -4,27 +4,43 @@ import {useRouter} from 'expo-router'
 
 const app = () => {
 
-  // const [nome, setNome] = useState("")
-  // const [sobrenome, setSobrenome] = useState("")
-  // const [cpf, setCpf] = useState("")
+  const [nome, setNome] = useState("")
+  const [sobrenome, setSobrenome] = useState("")
+  const [cpf, setCpf] = useState("")
 
   const router = useRouter()
 
   return (
     <View style={styles.container}>
-        {/* <View>
-          <TextInput 
-            style={styles.input}
-            placeholder='nome'
-            onChangeText={text => setNome(text)}
-            value={nome}>         
-          </TextInput>
-        </View> */}
-      <View style={styles.container}>
-        <Pressable>
-          <Text>foi papai</Text>
+      <View style={styles.form}>
+        <Text style={styles.title}>Criar usuário</Text>
+        <TextInput
+          style={styles.input}
+          placeholder='Nome'
+          onChangeText={text => setNome(text)}
+          value={nome}
+        />
+        <TextInput
+          style={styles.input}
+          placeholder='Sobrenome'
+          onChangeText={text => setSobrenome(text)}
+          value={sobrenome}
+        />
+        <TextInput
+          style={styles.input}
+          placeholder='CPF'
+          onChangeText={text => setCpf(text)}
+          value={cpf}
+        />
+      </View>
+      <View style={styles.buttons}>
+        <Pressable style={styles.button} onPress={handle}>
+          <Text style={styles.buttonText}>Criar</Text>
         </Pressable>
-      </View>          
+        <Pressable style={styles.button} onPress={() => router.push("/pagina")}>
+          <Text style={styles.buttonText}>Ver lista</Text>
+        </Pressable>
+      </View>
     </View>
   )
 
