@@ -1,6 +1,7 @@
-import { View, StyleSheet, Text, Pressable, TextInput } from 'react-native'
-import React, { useState } from 'react'
-import {useRouter} from 'expo-router'
+import { useRouter } from 'expo-router';
+import { useState } from 'react';
+import { StyleSheet, Text, View, TextInput, Pressable } from 'react-native';
+import firebase from "../firebase"
 
 const app = () => {
 
