@@ -4,9 +4,9 @@ import {useRouter} from 'expo-router'
 
 const app = () => {
 
-  const [nome, setNome] = useState("")
-  const [sobrenome, setSobrenome] = useState("")
-  const [cpf, setCpf] = useState("")
+  // const [nome, setNome] = useState("")
+  // const [sobrenome, setSobrenome] = useState("")
+  // const [cpf, setCpf] = useState("")
 
   const router = useRouter()
 
@@ -21,8 +21,8 @@ const app = () => {
           </TextInput>
         </View> */}
       <View style={styles.container}>
-        <Pressable onPress={router.push("/toma")}>
-          <Text style={styles.botao}>Foi</Text>
+        <Pressable>
+          <Text>foi papai</Text>
         </Pressable>
       </View>          
     </View>
